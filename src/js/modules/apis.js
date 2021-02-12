@@ -26,7 +26,7 @@ export function getTime(uluru) {
 }
 
 export function getMap(uluru, mode, id) {
-  const mapId = mode === 'dark' ? process.env.MAP_DARK_ID : false;
+  const mapId = mode === 'dark' ? process.env.API_TOCKEN_MAP_DARK_ID : false;
   const { lat, lon: lng } = uluru;
 
   const map = new google.maps.Map(id, {

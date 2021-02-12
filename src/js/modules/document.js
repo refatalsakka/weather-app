@@ -8,6 +8,7 @@ import {
   getIconCountry,
   innerHTML,
   getCurrentDate,
+  formatDate,
   information,
 } from './helpers';
 
@@ -41,7 +42,7 @@ export default async function update(cityName) {
 
   addClassNameToBody(mode);
   innerHTML(elements.city, (`${info.name},${info.country} ${countryIcon}`));
-  innerHTML(elements.date, currentDate);
+  innerHTML(elements.date, formatDate(currentDate));
   innerHTML(elements.description, info.description);
   innerHTML(elements.icon, weatherIcon);
   innerHTML(elements.pressure, Math.round(info.pressure));

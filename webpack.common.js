@@ -1,12 +1,15 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+require('dotenv').config();
 
 module.exports = {
   entry: './src/js/app.js',
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    filename: 'js/app.js',
+    path: path.resolve(__dirname),
+    filename: 'dist/js/app.js',
     environment: {
       arrowFunction: false,
       const: false,
@@ -16,8 +19,18 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'src/index.ejs',
+      process: {
+        env: {
+          API_TOCKEN_MAP: process.env.API_TOCKEN_MAP,
+          API_TOCKEN_MAP_DARK_ID: process.env.API_TOCKEN_MAP_DARK_ID,
+        },
+      },
+    }),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',
+      filename: 'dist/css/style.css',
     }),
   ],
   module: {

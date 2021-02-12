@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weather app"/>
+  <title>Weather App</title>
+</head>
+
+<body class="light">
+  <div class="search">
+    <form action="#" method="get">
+      <label>Weather in</label>
+      <input type="text" name="city" placeholder="City">
+      <p class="error">City not Found</p>
+    </form>
+  </div>
+  <div class="card">
+    <div class="loading"><i class="fas fa-circle-notch fa-spin"></i></div>
+    <div class="row">
+      <h1 class="city"></h1>
+      <p class="date"></p>
+      <h2><span class="main"></span>°c</h2>
+    </div>
+    <div class="row">
+      <p class="description"></p>
+      <span class="icon"></i></span>
+    </div>
+    <div class="row details">
+      <p>
+        <span class="temp-min"></span>°c /
+        <span class="temp-max"></span>°c |
+        Feels like <span class="feels-like"></span>°c
+      </p>
+      <p>
+        pressure <span class="pressure"></span>
+        mb Humidity <span class="humidity"></span>%</p>
+      <p>
+        Wind <span class="wind"></span>km
+        Visibility <span class="visibility"></span>km</p>
+    </div>
+    <div class="row map" id="map"></div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= htmlWebpackPlugin.options.process.env.API_TOCKEN_MAP %>&map_ids=<%= htmlWebpackPlugin.options.process.env.API_TOCKEN_MAP_DARK_ID %>"></script>
+</body>
+
+</html>

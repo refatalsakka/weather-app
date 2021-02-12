@@ -21,10 +21,6 @@ export function information(city) {
   };
 }
 
-export function dateToTimestamp(date) {
-  return (new Date(date).getTime() / 1000);
-}
-
 export function count(elm, _new) {
   let finish = false;
   let old = Number(elm.innerText);
@@ -40,6 +36,22 @@ export function count(elm, _new) {
     innerHTML(elm, old);
     if (finish) elm.classList.toggle('active');
   }, 100);
+}
+
+export function dateToTimestamp(date) {
+  return new Date(date).getTime() / 1000;
+}
+
+export function formatDate(data) {
+  return new Date(data).toLocaleString('en-US', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
+    hour12: false,
+    hour: 'numeric',
+    minute: 'numeric',
+  });
 }
 
 export function getCurrentDate(timeZone) {
