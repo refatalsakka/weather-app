@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weather app"/>
+  <title>Weather</title>
+  <link rel="stylesheet" href="/dist/css/style.css">
+</head>
+
+<body class="light">
+  <div class="search">
+    <form action="#" method="get">
+      <label>Weather in</label>
+      <input type="text" name="city" placeholder="City">
+      <p class="error">City not Found</p>
+    </form>
+  </div>
+  <div class="card">
+    <div class="loading"><i class="fas fa-circle-notch fa-spin"></i></div>
+    <div class="row">
+      <h1 class="city"></h1>
+      <p class="date"></p>
+      <hr />
+    </div>
+    <div class="row details">
+      <h2><span class="main"></span>°c</h2>
+      <p>
+        <span class="temp-min"></span>°c /
+        <span class="temp-max"></span>°c |
+        Feels like <span class="feels-like"></span>°c
+      </p>
+      <hr />
+      <p>pressure <span class="pressure"></span>mb Humidity <span class="humidity"></span>%</p>
+      <hr />
+      <p>Wind <span class="wind"></span>km Visibility <span class="visibility"></span>km</p>
+      <hr />
+    </div>
+    <div class="row">
+      <p class="description"></p>
+      <span class="icon"></i></span>
+    </div>
+    <div class="row map" id="map"></div>
+  </div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm5zu2umxcs_Ae59kX-z_BWkvSk0NwZjQ&map_ids=17e59106da177b43"
+    async
+  ></script>
+  <script defer src="dist/js/app.js"></script>
+</body>
+
+</html>

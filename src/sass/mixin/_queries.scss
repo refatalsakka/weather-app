@@ -1,0 +1,48 @@
+$extra-small: 'only screen and (max-width : 576px)';
+$small: 'only screen and (min-width : 576px)';
+$medium: 'only screen and (min-width : 768px)';
+$large: 'only screen and (min-width : 992px)';
+$extra-large: 'only screen and (min-width : 1200px)';
+
+@mixin extra-small {
+  @media #{$extra-small} {
+    @content;
+  }
+}
+
+@mixin small {
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin large {
+  @media #{$large} {
+    @content;
+  }
+}
+
+@mixin extra-large {
+  @media #{$extra-large} {
+    @content;
+  }
+}
+
+// @include extra-small() {
+//   background-color: rgb(5, 221, 88);
+// }
+// @include small() {
+//   background-color: rgb(221, 48, 5);
+// }
+// @include large() {
+//   background-color: rgb(136, 9, 94);
+// }
+// @include extra-large() {
+//   background-color: rgb(5, 99, 221);
+// }
