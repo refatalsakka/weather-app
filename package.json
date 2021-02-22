@@ -5,7 +5,7 @@
   "scripts": {
     "server": "live-server",
     "gitty": "node gitty.js",
-    "lint": "eslint src/**/*.js && stylelint\"src/sass/**/*.s+(a|c)ss\"",
+    "lint": "eslint src/**/*.js && stylelint \"src/sass/**/*.s+(a|c)ss\"",
     "lint:fix": "eslint --fix src/**/*.js && stylelint --fix \"src/**/*.scss\"",
     "lint:js": "eslint src/**/*.js",
     "lint:sass": "stylelint \"src/sass/**/*.s+(a|c)ss\"",
